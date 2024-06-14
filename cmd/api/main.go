@@ -1,16 +1,16 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"gofr.dev/pkg/gofr"
 )
 
 func main() {
-	app := fiber.New()
+	app := gofr.New()
 
-	app.Get("/health", func(c *fiber.Ctx) error {
-		return c.JSON(fiber.Map{
-			"status": "OK!",
-		})
+	app.GET("/hello", func(c *gofr.Context) (interface{}, error) {
+		return "Hello GoFr!", nil
 	})
-	app.Listen(":8080")
+
+	app.Run()
+
 }

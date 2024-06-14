@@ -103,10 +103,12 @@
     "devcontainer",
     "devcontainers",
     "dockercompose",
+    "Doraemon",
     "Godoc",
     "gofiber",
     "gofmt",
-    "gomod"
+    "gomod",
+    "Nobita"
   ],
   "todo-tree.general.tags": [
     "HACK",
