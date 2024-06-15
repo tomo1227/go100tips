@@ -1,0 +1,43 @@
+name: coverage
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.go"
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "**.go"
+  workflow_dispatch:
+permissions: write-all
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-go@v3
+        with:
+          go-version: go.mod
+      - name: run coverage
+        run: |
+          make ci-cov
+      - name: Run vulncheck
+        run: make lint
+        shell: bash
+      - name: Run vulncheck
+        run: make vulncheck
+        shell: bash
+      # ビルド
+      - name: Build
+        run: make build
+        shell: bash
+      # テスト実行
+      - name: Run Tests
+        run: make test-ci
+        shell: bash
+      - name: create report
+        uses: k1LoW/octocov-action@v0

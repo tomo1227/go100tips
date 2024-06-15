@@ -159,5 +159,8 @@
     ".devcontainer/devcontainer.json",
     ".golangci.toml"
   ],
-  "errorLens.excludeBySource": ["cSpell"]
+  "errorLens.excludeBySource": ["cSpell"],
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
