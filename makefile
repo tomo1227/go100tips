@@ -42,7 +42,7 @@ cov:
 	go test -cover ./... -coverprofile=coverage.out
 	go tool cover -html=coverage.out -o coverage.html
 
-.PHONY ci-cov
+.PHONY: ci-cov
 ci-cov:
 	go test -short -v -covermode=count -coverprofile=coverage.out  | tee test_output.txt
 	go tool cover -func=coverage.out | awk '/total/ {print "| **" $$1 "** | **" $$3 "** |"}' | tee coverage.txt
