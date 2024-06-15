@@ -37,7 +37,7 @@ jobs:
         shell: bash
       # テスト実行
       - name: Run Tests
-        run: make test-ci
+        run: make ci-test
         shell: bash
       - name: create report
         uses: k1LoW/octocov-action@v0

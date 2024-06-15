@@ -42,6 +42,7 @@ cov:
 	go test -cover ./... -coverprofile=coverage.out
 	go tool cover -html=coverage.out -o coverage.html
 
-.PHONY: ci-cov
+# action用のtest
+.PHONY: ci-test
 ci-cov:
 	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) xargs go test -cover -v
