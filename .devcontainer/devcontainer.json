@@ -5,7 +5,7 @@
   "dockerComposeFile": ["../compose.yml"],
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.22.3"
+      "version": "1.22.4"
     }
   },
   "forwardPorts": [8080],
@@ -46,7 +46,8 @@
         "pkief.material-icon-theme",
         "ms-vscode.live-server",
         "ms-vscode.makefile-tools",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "ryanluker.vscode-coverage-gutters"
       ]
     }
   }

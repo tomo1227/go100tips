@@ -35,3 +35,14 @@ godoc:
 .PHONY: update
 update:
 	go get -u ./...
+
+# テストカバレッジ出力
+.PHONY: cov
+cov:
+	go test -cover ./... -coverprofile=coverage.out
+	go tool cover -html=coverage.out -o coverage.html
+
+# action用のtest
+.PHONY: ci-test
+ci-test:
+	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) LOCALSTACK_HOST=localhost:4567 xargs go test -v -covermode=count -coverprofile=coverage.out
