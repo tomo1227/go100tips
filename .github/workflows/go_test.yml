@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-go@v3
         with:
-          go-version: go.mod
+          go-version-file: 1.22.4
       - name: run coverage
         run: |
           make ci-cov
