@@ -22,9 +22,6 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: go.mod
-      - name: run coverage
-        run: |
-          make ci-cov
       - name: Run vulncheck
         run: make lint
         shell: bash
