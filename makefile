@@ -44,5 +44,5 @@ cov:
 
 # action用のtest
 .PHONY: ci-test
-ci-cov:
-	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) xargs go test -cover -v
+ci-test:
+	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) LOCALSTACK_HOST=localhost:4567 xargs go test -v -covermode=count -coverprofile=coverage.out
