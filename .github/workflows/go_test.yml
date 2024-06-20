@@ -35,6 +35,7 @@ jobs:
       # テスト実行
       - name: Run Tests
         run: make ci-test
-        shell: bash
       - name: create report
         uses: k1LoW/octocov-action@v0
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3

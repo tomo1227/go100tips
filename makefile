@@ -1,3 +1,4 @@
+include .env
 # test を実行
 .PHONY: test
 test: 
@@ -28,10 +29,6 @@ build:
 run:
 	go run cmd/api/main.go
 
-.PHONY: godoc
-godoc:
-	go doc fmt
-
 .PHONY: update
 update:
 	go get -u ./...
@@ -45,4 +42,10 @@ cov:
 # action用のtest
 .PHONY: ci-test
 ci-test:
-	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) LOCALSTACK_HOST=localhost:4567 xargs go test -v -covermode=count -coverprofile=coverage.out
+	go list -f '{{.Dir}}/...' -m | xargs go test -v -race -coverprofile=coverage.out -covermode=atomic
+
+# GoDoc
+.PHONY: godoc
+godoc:
+	go install golang.org/x/tools/cmd/godoc@latest
+	godoc -http=:$(GODOC_PORT)
