@@ -42,7 +42,7 @@ cov:
 # action用のtest
 .PHONY: ci-test
 ci-test:
-	go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(shell pwd) xargs go test -v -race -covermode=atomic -coverprofile=coverage.out
+	go list -f '{{.Dir}}/...' -m | xargs go test -v -race -coverprofile=coverage.out -covermode=atomic
 
 # GoDoc
 .PHONY: godoc
