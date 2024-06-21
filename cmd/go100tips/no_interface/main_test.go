@@ -18,7 +18,7 @@ import (
 
 // func (d mockDoraemon) getItem() (string, error) {
 // 	if d.want {
-// 		return "", errors.New("エラーが発生しました")
+// 		return "", assert.AnError
 // 	}
 // 	return "暗記パン🍞", nil
 // }

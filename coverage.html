@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>api: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">go100tips/cmd/api/main.go (0.0%)</option>
+				
+				<option value="file1">go100tips/cmd/go100tips/di/main.go (16.7%)</option>
+				
+				<option value="file2">go100tips/cmd/go100tips/doraemon/main.go (0.0%)</option>
+				
+				<option value="file3">go100tips/cmd/go100tips/foo/main.go (0.0%)</option>
+				
+				<option value="file4">go100tips/cmd/go100tips/no_di/main.go (63.6%)</option>
+				
+				<option value="file5">go100tips/cmd/go100tips/no_interface/main.go (54.5%)</option>
+				
+				<option value="file6">go100tips/cmd/go100tips/tip5_1/main.go (0.0%)</option>
+				
+				<option value="file7">go100tips/cmd/go100tips/tip5_2/main.go (0.0%)</option>
+				
+				<option value="file8">go100tips/cmd/uber/main.go (0.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package main
+
+import (
+        "gofr.dev/pkg/gofr"
+)
+
+func main() <span class="cov0" title="0">{
+        app := gofr.New()
+
+        app.GET("/hello", func(c *gofr.Context) (interface{}, error) </span><span class="cov0" title="0">{
+                return "Hello GoFr!", nil
+        }</span>)
+
+        <span class="cov0" title="0">app.Run()</span>
+
+}
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package main
+
+import (
+        "fmt"
+)
+
+// Pocketインターフェース
+type Pocket interface {
+        DoSomething() string
+}
+
+// DoraemonはServiceインターフェースを実装する
+type Doraemon struct {
+        Name string
+}
+
+// DoSomethingはMyServiceのメソッド
+func (s Doraemon) DoSomething() string <span class="cov0" title="0">{
+        return "Hello, " + s.Name
+}</span>
+
+// NobitaはServiceを依存性として持つ
+type Nobita struct {
+        service Pocket
+}
+
+// NewClientはClientのコンストラクタで、Serviceを注入する
+func NewClient(s Pocket) *Nobita <span class="cov8" title="1">{
+        return &amp;Nobita{service: s}
+}</span>
+
+// UseServiceはServiceのメソッドを呼び出す
+func (c *Nobita) UseService() <span class="cov0" title="0">{
+        fmt.Println(c.service.DoSomething())
+}</span>
+
+func main() <span class="cov0" title="0">{
+        // MyServiceのインスタンスを作成
+        myService := Doraemon{Name: "World"}
+
+        // MyServiceのインスタンスをClientに注入
+        client := NewClient(myService)
+
+        // ClientがServiceを使用
+        client.UseService()
+}</span>
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package main
+
+// type Pocket interface {
+//         getItem()
+// }
+
+// type Doraemon struct {
+//         Pocket
+// }
+
+// func (p *Doraemon) GetItem(ctx context.Context, name string) (model.Item, error) {
+//         return p.items[0], nil
+// }
+
+func main() {<span class="cov0" title="0">
+        // d := Doraemon{
+        //         pocket: Pocket{
+        //                 items: []Item{
+        //                         {name: "タケコプター"}, {name: "どこでもドア"}, {name: "タイムマシン"},
+        //                 },
+        //         },
+        // }
+        // item, err := d.GetNewItem()
+        // if err != nil {
+        //         fmt.Println("エラー:", err)
+        // } else {
+        //         fmt.Println("今日の秘密どうぐ : ", item)
+        // }
+}</span>
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package main
+
+import "fmt"
+
+type I interface {
+        Do(num int) error
+}
+
+type impl struct {
+}
+
+type a struct {
+        i I
+}
+
+func (a a) Do(num int) error <span class="cov0" title="0">{
+        fmt.Println(num)
+        return nil
+}</span>
+
+func (a impl) Do(num int) error <span class="cov0" title="0">{
+        fmt.Println(num * 2)
+        return nil
+}</span>
+
+func main() <span class="cov0" title="0">{
+        a := a{
+                i: impl{},
+        }
+        // a.Do(1)
+        a.i.Do(1)
+}</span>
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package main
+
+import "fmt"
+
+type Doraemon struct{}
+
+func (d Doraemon) getItem() (string, error) <span class="cov8" title="1">{
+        return "暗記パン🍞", nil
+}</span>
+
+func NewDoraemon() Doraemon <span class="cov8" title="1">{
+        return Doraemon{}
+}</span>
+
+// Nobita のび太がドラえもんに依存している
+type Nobita struct {
+        doraemon Doraemon
+}
+
+func NewNobita() Nobita <span class="cov8" title="1">{
+        doraemon := NewDoraemon()
+        return Nobita{
+                doraemon: doraemon,
+        }
+}</span>
+
+func (n Nobita) study() string <span class="cov8" title="1">{
+        item, err := n.doraemon.getItem()
+        if err != nil </span><span class="cov0" title="0">{
+                return "勉強できないよ〜😭"
+        }</span>
+        <span class="cov8" title="1">return fmt.Sprintf("%sを使って勉強できた!", item)</span>
+}
+
+func main() <span class="cov0" title="0">{
+        nobita := NewNobita()
+        result := nobita.study()
+        fmt.Println(result)
+}</span>
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package main
+
+import "fmt"
+
+type Doraemon struct{}
+
+func (d Doraemon) getItem() (string, error) <span class="cov8" title="1">{
+        return "暗記パン🍞", nil
+}</span>
+
+func NewDoraemon() Doraemon <span class="cov8" title="1">{
+        return Doraemon{}
+}</span>
+
+type Nobita struct {
+        doraemon Doraemon
+}
+
+func NewNobita(doraemon Doraemon) Nobita <span class="cov8" title="1">{
+        return Nobita{
+                doraemon: doraemon,
+        }
+}</span>
+
+func (n Nobita) study() string <span class="cov8" title="1">{
+        item, err := n.doraemon.getItem()
+        if err != nil </span><span class="cov0" title="0">{
+                return "勉強できないよ〜😭"
+        }</span>
+        <span class="cov8" title="1">return fmt.Sprintf("%sを使って勉強できた!", item)</span>
+}
+
+func main() <span class="cov0" title="0">{
+        doraemon := NewDoraemon()
+        nobita := NewNobita(doraemon)
+        result := nobita.study()
+        fmt.Println(result)
+}</span>
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package main
+
+import (
+        "errors"
+        "fmt"
+)
+
+type Item struct {
+        name string
+}
+
+type Doraemon struct {
+        pocket Pocket
+}
+
+func (d Doraemon) GetNewItem() (Item, error) <span class="cov0" title="0">{
+        return d.pocket.GetItem()
+}</span>
+
+type Pocket struct {
+        items []Item
+}
+
+func (p *Pocket) GetItem() (Item, error) <span class="cov0" title="0">{
+        if len(p.items) == 0 </span><span class="cov0" title="0">{
+                return Item{}, errors.New("何もない")
+        }</span>
+        <span class="cov0" title="0">return p.items[0], nil</span>
+}
+
+func main() <span class="cov0" title="0">{
+        d := Doraemon{
+                pocket: Pocket{
+                        items: []Item{
+                                {name: "タケコプター"}, {name: "どこでもドア"}, {name: "タイムマシン"},
+                        },
+                },
+        }
+        item, err := d.GetNewItem()
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println("エラー:", err)
+        }</span> else<span class="cov0" title="0"> {
+                fmt.Println("今日の秘密どうぐ : ", item)
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package main
+
+import (
+        "errors"
+        "fmt"
+)
+
+type Doraemon struct {
+        pocket Pocket
+}
+
+func (d Doraemon) GetNewItem() (Item, error) <span class="cov0" title="0">{
+        return d.pocket.GetItem()
+}</span>
+
+type Pocket interface {
+        GetItem() (Item, error)
+}
+
+type pocket struct {
+        items []Item
+}
+
+func (p *pocket) GetItem() (Item, error) <span class="cov0" title="0">{
+        if len(p.items) == 0 </span><span class="cov0" title="0">{
+                return Item{}, errors.New("何もない")
+        }</span>
+        <span class="cov0" title="0">return p.items[0], nil</span>
+}
+
+type Item struct {
+        name string
+}
+
+func main() <span class="cov0" title="0">{
+        // pocket 構造体のインスタンスを作成
+        p := &amp;pocket{
+                items: []Item{
+                        {name: "タケコプター"},
+                        {name: "どこでもドア"},
+                        {name: "タイムマシン"},
+                },
+        }
+
+        // Doraemon 構造体のインスタンスを作成
+        d := Doraemon{
+                pocket: p,
+        }
+        item, err := d.GetNewItem()
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println("エラー:", err)
+        }</span> else<span class="cov0" title="0"> {
+                fmt.Println("今日の秘密どうぐ : ", item)
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package main
+
+func main() {<span class="cov0" title="0">
+
+        // ClientがServiceを使用
+        // client.UseService
+}</span>
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>

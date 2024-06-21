@@ -15,15 +15,12 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        // Go
         "golang.go",
         "premparihar.gotest",
         "766b.go-outliner",
-        // yaml, jsonc, json, toml
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
         "tamasfe.even-better-toml",
-        // Git関連
         "GitHub.vscode-pull-request-github",
         "github.vscode-github-actions",
         "mhutchie.git-graph",
@@ -31,13 +28,10 @@
         "donjayamanne.githis",
         "github.vscode-github-actions",
         "seatonjiang.gitmoji-vscode",
-        // SQL
         "adpyke.vscode-sql-formatter",
-        // markdown
         "yzhang.markdown-all-in-one",
         "DavidAnson.vscode-markdownlint",
         "bierner.github-markdown-preview",
-        // その他
         "ms-vscode.makefile-tools",
         "streetsidesoftware.code-spell-checker",
         "naumovs.color-highlight",
@@ -47,7 +41,8 @@
         "ms-vscode.live-server",
         "ms-vscode.makefile-tools",
         "usernamehw.errorlens",
-        "ryanluker.vscode-coverage-gutters"
+        "ryanluker.vscode-coverage-gutters",
+        "formulahendry.code-runner"
       ]
     }
   }
