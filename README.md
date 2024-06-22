@@ -1,6 +1,6 @@
 # go100tips
 
-[![test](https://github.com/tomo1227/go100tips/actions/workflows/go_test.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/go_test.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips)
+[![ci](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips)
 
 Go100Tipsの解説で使用するサンプルリポジトリ
 
