@@ -5,9 +5,10 @@ on:
       - main
   pull_request:
     types: [opened, synchronize]
-    paths:
-      - "**.yml"
-      - "**.go"
+    paths-ignore:
+      - "**.md"
+      - ".vscode/**"
+      - ".devcontainer/**"
   workflow_dispatch:
 permissions: write-all
 
