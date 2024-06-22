@@ -1,5 +1,5 @@
 comment:
-  layout: "reach, diff, flags, files"
+  layout: "reach, diff, flags, files, Header, Footer"
   behavior: default
   require_changes: false # カバレッジの変更時のみコメントを表示する
   require_base: true # [true :: must have a base report to post]

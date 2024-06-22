@@ -6,7 +6,10 @@ Go100Tipsの解説で使用するサンプルリポジトリ
 
 ## Slide
 
-* [Go言語100Tips No.1~5 まとめ - Speaker Deck](https://speakerdeck.com/tomo1227/goyan-yu-100tips-no-dot-1-5-matome)
+* [Go言語100Tips No.1~5 まとめ](https://speakerdeck.com/tomo1227/goyan-yu-100tips-no-dot-1-5-matome)
+* [Go言語100Tips No.6~10 まとめ](https://speakerdeck.com/tomo1227/go100tips6-10)
+* [ドラ🔵もんでDIを学ぶ](https://speakerdeck.com/tomo1227/dora-mondediwoxue-bu)
+* [依存性の注入とは？](https://speakerdeck.com/tomo1227/yi-cun-xing-nozhu-ru-toha)
 
 ## Usage
 
