@@ -12,8 +12,8 @@ lint:
 	unparam -exported ./...
 
 # 脆弱性診断を実行
-.PHONY: vulncheck
-vulncheck:
+.PHONY: vuln
+vuln:
 	go install golang.org/x/vuln/cmd/govulncheck@latest
 	go list -f '{{.Dir}}/...' -m | xargs govulncheck
 

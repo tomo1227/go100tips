@@ -13,8 +13,6 @@
     "github.vscode-github-actions",
     "mhutchie.git-graph",
     "eamodio.gitlens",
-    "donjayamanne.githis",
-    "github.vscode-github-actions",
     "seatonjiang.gitmoji-vscode",
     // SQL
     "adpyke.vscode-sql-formatter",
@@ -28,9 +26,7 @@
     "naumovs.color-highlight",
     "Gruntfuggly.todo-tree",
     "oderwat.indent-rainbow",
-    "pkief.material-icon-theme",
     "ms-vscode.live-server",
-    "ms-vscode.makefile-tools",
     "usernamehw.errorlens"
   ]
 }

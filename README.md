@@ -1,12 +1,15 @@
 # go100tips
 
-[![test](https://github.com/tomo1227/go100tips/actions/workflows/go_test.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/go_test.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips)
+[![ci](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Go100Tipsの解説で使用するサンプルリポジトリ
 
 ## Slide
 
-* [Go言語100Tips No.1~5 まとめ - Speaker Deck](https://speakerdeck.com/tomo1227/goyan-yu-100tips-no-dot-1-5-matome)
+* [Go言語100Tips No.1~5 まとめ](https://speakerdeck.com/tomo1227/goyan-yu-100tips-no-dot-1-5-matome)
+* [Go言語100Tips No.6~10 まとめ](https://speakerdeck.com/tomo1227/go100tips6-10)
+* [ドラ🔵もんでDIを学ぶ](https://speakerdeck.com/tomo1227/dora-mondediwoxue-bu)
+* [依存性の注入とは？](https://speakerdeck.com/tomo1227/yi-cun-xing-nozhu-ru-toha)
 
 ## Usage
 
