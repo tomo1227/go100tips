@@ -14,10 +14,6 @@ func mockNewDoraemon(want bool) mockDoraemon {
 	return mockDoraemon{want: want}
 }
 
-func mockNewNobita() FourDimensionalPocket {
-	return mockDoraemon{}
-}
-
 func (d mockDoraemon) getItem() (string, error) {
 	if d.want {
 		return "", assert.AnError
