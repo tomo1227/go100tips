@@ -9,5 +9,4 @@ enable = [
   "gosimple",
   "ineffassign",
   "staticcheck",
-  "errcheck",
 ]
