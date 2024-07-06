@@ -1,12 +1,20 @@
 coverage:
   status:
+    patch:
+      default:
+        target: 30%
+        threshold: 10%
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
     project:
       default:
+        target: 30%
         threshold: 10%
-status:
-  patch:
-    default:
-      threshold: 10%
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+
 comment:
   layout: "reach, diff, flags, files, Header, Footer"
   behavior: default
