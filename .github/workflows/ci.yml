@@ -43,6 +43,7 @@ jobs:
       - name: Check lint
         uses: reviewdog/action-golangci-lint@v2
         with:
+          go_version_file: go.mod
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: error
@@ -64,4 +65,5 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
+          fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
