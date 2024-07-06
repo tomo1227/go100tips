@@ -1,6 +1,6 @@
 # go100tips
 
-[![ci](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/tomo1227/go100tips/graph/badge.svg?token=O0NWQ58DGF)](https://codecov.io/github/tomo1227/go100tips) [![CodeQL](https://github.com/tomo1227/go100tips/actions/workflows/code_ql.yml/badge.svg)](https://github.com/tomo1227/go100tips/actions/workflows/code_ql.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Go100Tipsの解説で使用するサンプルリポジトリ
 
@@ -18,8 +18,7 @@ Go100Tipsの解説で使用するサンプルリポジトリ
 以下のコマンドでサンプルのサーバーを起動できる。
 
 ```sh
-cd cmd/api
-go run main.go
+make run
 ```
 
 ```shell_session

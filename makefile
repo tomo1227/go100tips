@@ -7,9 +7,7 @@ test:
 .PHONY: lint
 lint: 
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-	go install mvdan.cc/unparam@latest
 	golangci-lint run
-	unparam -exported ./...
 
 # 脆弱性診断を実行
 .PHONY: vuln
@@ -27,7 +25,7 @@ build:
 
 .PHONY: run
 run:
-	go run cmd/api/main.go
+	cd cmd/api; go run .
 
 .PHONY: update
 update:

@@ -13,8 +13,8 @@ func (d Doraemon) getItem() (string, error) {
 	return "暗記パン🍞", nil
 }
 
-func NewDoraemon() *Doraemon {
-	return &Doraemon{}
+func NewDoraemon() Doraemon {
+	return Doraemon{}
 }
 
 type Nobita struct {

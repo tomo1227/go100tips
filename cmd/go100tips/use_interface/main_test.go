@@ -10,12 +10,8 @@ type mockDoraemon struct {
 	want bool
 }
 
-func mockNewDoraemon(want bool) *mockDoraemon {
-	return &mockDoraemon{want: want}
-}
-
-func mockNewNobita() FourDimensionalPocket {
-	return mockDoraemon{}
+func mockNewDoraemon(want bool) mockDoraemon {
+	return mockDoraemon{want: want}
 }
 
 func (d mockDoraemon) getItem() (string, error) {
