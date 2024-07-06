@@ -39,6 +39,7 @@ jobs:
           done
       - uses: actions/setup-go@v5
         with:
+          cache: true
           go-version-file: go.mod
       - name: Check lint
         uses: reviewdog/action-golangci-lint@v2
