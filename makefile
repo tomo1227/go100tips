@@ -37,6 +37,11 @@ cov:
 	go test -cover ./... -coverprofile=coverage.out
 	go tool cover -html=coverage.out -o coverage.html
 
+# action用のtest
+.PHONY: ci-test
+ci-test:
+	go list -f '{{.Dir}}/...' -m | xargs go test -v -race -coverprofile=coverage.out -covermode=atomic
+
 # GoDoc
 .PHONY: godoc
 godoc:
