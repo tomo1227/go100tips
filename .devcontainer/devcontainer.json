@@ -15,27 +15,27 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        // Go
         "golang.go",
         "premparihar.gotest",
-        "766b.go-outliner",
+        // yaml, jsonc, json, toml
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
         "tamasfe.even-better-toml",
-        "GitHub.vscode-pull-request-github",
+        // Git関連
         "github.vscode-github-actions",
         "mhutchie.git-graph",
         "eamodio.gitlens",
         "seatonjiang.gitmoji-vscode",
-        "adpyke.vscode-sql-formatter",
+        // markdown
         "yzhang.markdown-all-in-one",
         "DavidAnson.vscode-markdownlint",
         "bierner.github-markdown-preview",
-        "ms-vscode.makefile-tools",
+        // その他
         "streetsidesoftware.code-spell-checker",
         "naumovs.color-highlight",
         "Gruntfuggly.todo-tree",
         "oderwat.indent-rainbow",
-        "ms-vscode.live-server",
         "MS-vsliveshare.vsliveshare",
         "usernamehw.errorlens",
         "formulahendry.code-runner"
