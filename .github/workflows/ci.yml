@@ -19,13 +19,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: actions/setup-go@v5
-        id: setup-go
-        with:
-          go-version-file: go.mod
+      # - uses: actions/setup-go@v5
+      #   id: setup-go
+      #   with:
+      #     go-version-file: go.mod
       - name: Check lint
         uses: reviewdog/action-golangci-lint@v2
-        if: ${{ steps.setup-go.outputs.cache-hit != 'true' }}
+        # if: ${{ steps.setup-go.outputs.cache-hit != 'true' }}
         with:
           go_version_file: go.mod
           github_token: ${{ secrets.github_token }}
@@ -34,20 +34,20 @@ jobs:
           filter_mode: nofilter
           golangci_lint_flags: "--config=.golangci.toml"
           fail_on_error: true
-      # - name: Check vulnerability
-      #   run: make vuln
-      #   shell: bash
-      # # ビルド
-      # - name: Build
-      #   run: make build
-      #   shell: bash
-      # # テスト実行
-      # - name: Run Tests
-      #   run: make ci-test
-      # - name: create report
-      #   uses: k1LoW/octocov-action@v1
-      # - name: Upload coverage to Codecov
-      #   uses: codecov/codecov-action@v4
-      #   with:
-      #     fail_ci_if_error: true
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Check vulnerability
+        run: make vuln
+        shell: bash
+      # ビルド
+      - name: Build
+        run: make build
+        shell: bash
+      # テスト実行
+      - name: Run Tests
+        run: make ci-test
+      - name: create report
+        uses: k1LoW/octocov-action@v1
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
