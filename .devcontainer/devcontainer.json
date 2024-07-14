@@ -23,7 +23,6 @@
         "esbenp.prettier-vscode",
         "tamasfe.even-better-toml",
         // Git関連
-        "github.vscode-github-actions",
         "mhutchie.git-graph",
         "eamodio.gitlens",
         "seatonjiang.gitmoji-vscode",
