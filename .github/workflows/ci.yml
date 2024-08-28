@@ -27,7 +27,7 @@ jobs:
           reporter: github-pr-review
           level: error
           filter_mode: nofilter
-          golangci_lint_flags: "--config=.golangci.toml"
+          golangci_lint_flags: "--config=.golangci.toml --timeout=5m"
           fail_on_error: true
       - name: Check vulnerability
         run: make vuln
