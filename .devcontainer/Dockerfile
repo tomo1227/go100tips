@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/devcontainers/base:bullseye
+FROM mcr.microsoft.com/devcontainers/base:jammy
 RUN apt update && \
     apt install -y vim curl
