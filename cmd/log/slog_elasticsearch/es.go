@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"log"
+	"fmt"
 	"log/slog"
 	"time"
 
@@ -23,8 +23,6 @@ func NewElasticsearchHandler(level slog.Level) *ElasticsearchHandler {
 	if err != nil {
 		panic(err)
 	}
-	log.Println(elasticsearch.Version)
-	log.Println(es.Info())
 	return &ElasticsearchHandler{client: es, level: level}
 }
 
@@ -43,9 +41,25 @@ func (h *ElasticsearchHandler) Handle(_ context.Context, record slog.Record) err
 		return true
 	})
 
-	data, _ := json.Marshal(entry)
+	data, err := json.Marshal(entry)
+	if err != nil {
+		return err
+	}
 
-	_, err := h.client.Index("go-logs", bytes.NewReader(data))
+	res, err := h.client.Index(
+		"go-logs",
+		bytes.NewReader(data),
+		h.client.Index.WithContext(context.Background()),
+	)
+	if err != nil {
+		return err
+	}
+	defer res.Body.Close()
+
+	if res.IsError() {
+		return fmt.Errorf("elasticsearch error: %s", res.String())
+	}
+
 	return err
 }
 
