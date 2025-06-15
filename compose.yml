@@ -11,3 +11,45 @@ services:
     ports:
       - ${HOST_IP}:${DEVCONTAINTER_HOST_PORT}:8080
     tty: true
+    networks:
+      - app
+
+  elasticsearch:
+    image: elasticsearch
+    container_name: elasticsearch
+    build: 
+      context: .
+      dockerfile: ./es/Dockerfile
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - node.name=elasticsearch
+      - cluster.name=es-docker-cluster
+      - "ES_JAVA_OPTS=-Xms4096m -Xmx4096m"
+      - http.port=9200
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+    # tty: true
+    networks:
+      - app
+
+  kibana:
+    image: kibana
+    container_name: kibana
+    build: 
+      context: .
+      dockerfile: ./kibana/Dockerfile
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge

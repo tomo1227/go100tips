@@ -90,6 +90,7 @@
     "anpanman",
     "devcontainer",
     "devcontainers",
+    "DEVCONTAINTER",
     "dockercompose",
     "Dokodemodoa",
     "Doraemon",
@@ -97,7 +98,9 @@
     "gofiber",
     "gofmt",
     "gomod",
-    "Nobita"
+    "healthcheck",
+    "Nobita",
+    "Takecopter"
   ],
   "todo-tree.general.tags": [
     "HACK",
