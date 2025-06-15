@@ -7,17 +7,6 @@
     "source.fixAll.markdownlint": "explicit"
   },
   "editor.rulers": [120],
-  "[go]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "golang.go",
-    "editor.autoIndent": "advanced",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll": "explicit"
-    },
-    "editor.insertSpaces": false,
-    "editor.tabSize": 4
-  },
   "go.useLanguageServer": true,
   "gopls": {
     "analyses": {
@@ -29,14 +18,20 @@
     "linkTarget": "pkg.go.dev",
     "completionDocumentation": true,
     "completeUnimported": true,
-    "deepCompletion": true
+    "deepCompletion": true,
+    "staticcheck": false
   },
   "go.languageServerFlags": ["-rpc.trace", "serve", "--debug=localhost:6060"],
   "go.trace.server": "verbose",
-  "go.formatTool": "gofmt",
-  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.lintTool": "golangci-lint-v2",
   "go.toolsManagement.autoUpdate": true,
-  "go.lintFlags": ["--config=${workspaceFolder}/.golangci.toml", "--fast"],
+  "go.lintFlags": ["--config=${workspaceFolder}/.golangci.toml", "--fast-only"],
+  "go.formatTool": "custom",
+  "go.alternateTools": {
+    "customFormatter": "golangci-lint"
+  },
+  "go.formatFlags": ["fmt", "--stdin"],
   "go.addTags": {
     "tags": "json,validate",
     "options": "json=omitempty,validate=omitempty",
@@ -44,7 +39,6 @@
     "transform": "snakecase",
     "template": ""
   },
-  "go.lintOnSave": "workspace",
   "go.coverOnSave": true,
   "go.coverageDecorator": {
     "type": "gutter",

@@ -4,9 +4,7 @@
   "workspaceFolder": "/workspace",
   "dockerComposeFile": ["../compose.yml"],
   "features": {
-    "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.22.5"
-    }
+    "ghcr.io/devcontainers/features/git:1": {}
   },
   "forwardPorts": [8080],
   "remoteUser": "vscode",
