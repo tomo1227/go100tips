@@ -25,12 +25,8 @@ services:
       - xpack.security.enabled=false
       - node.name=elasticsearch
       - cluster.name=es-docker-cluster
-      - "ES_JAVA_OPTS=-Xms4096m -Xmx4096m"
+      - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
       - http.port=9200
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
     ports:
       - "9200:9200"
     networks:
