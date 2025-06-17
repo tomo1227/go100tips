@@ -2,7 +2,14 @@ version = "2"
 
 [linters]
 default = "fast"
-enable = ["unparam", "govet", "unused", "ineffassign", "staticcheck"]
+enable = [
+  "unparam",
+  "govet",
+  "unused",
+  "ineffassign",
+  "staticcheck",
+  "errcheck",
+]
 
 [formatters]
 enable = ["gofmt", "goimports"]

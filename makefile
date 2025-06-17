@@ -6,8 +6,11 @@ test:
 
 .PHONY: lint
 lint: 
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	golangci-lint run --timeout=5m
+
+.PHONY: fmt
+fmt: 
+	golangci-lint fmt
 
 # 脆弱性診断を実行
 .PHONY: vuln

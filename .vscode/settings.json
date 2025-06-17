@@ -24,7 +24,7 @@
   "go.languageServerFlags": ["-rpc.trace", "serve", "--debug=localhost:6060"],
   "go.trace.server": "verbose",
   "go.lintOnSave": "workspace",
-  "go.lintTool": "golangci-lint-v2",
+  "go.lintTool": "golangci-lint",
   "go.toolsManagement.autoUpdate": true,
   "go.lintFlags": ["--config=${workspaceFolder}/.golangci.toml", "--fast-only"],
   "go.formatTool": "custom",
@@ -99,6 +99,7 @@
     "gofmt",
     "gomod",
     "healthcheck",
+    "mockgen",
     "Nobita",
     "Takecopter"
   ],
