@@ -9,12 +9,12 @@ type FourDimensionalPocket interface {
 type Doraemon struct {
 }
 
-func (d Doraemon) getItem() (string, error) {
-	return "暗記パン🍞", nil
-}
-
 func NewDoraemon() Doraemon {
 	return Doraemon{}
+}
+
+func (d Doraemon) getItem() (string, error) {
+	return "暗記パン🍞", nil
 }
 
 type Nobita struct {

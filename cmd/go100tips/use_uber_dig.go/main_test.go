@@ -28,10 +28,6 @@ func (d *mockDoraemon) GetDokodemodoa() (string, error) {
 	return "どこでもドア🚪", nil
 }
 
-func mockNewNobita(pocket FourDimensionalPocket) Nobita {
-	return Nobita{pocket: pocket}
-}
-
 func TestNobita_fly(t *testing.T) {
 	tests := []struct {
 		name    string

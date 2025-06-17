@@ -4,12 +4,12 @@ import "fmt"
 
 type Doraemon struct{}
 
-func (d Doraemon) getItem() (string, error) {
-	return "暗記パン🍞", nil
-}
-
 func NewDoraemon() Doraemon {
 	return Doraemon{}
+}
+
+func (d Doraemon) getItem() (string, error) {
+	return "暗記パン🍞", nil
 }
 
 // Nobita のび太がドラえもんに依存している
