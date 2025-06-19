@@ -19,6 +19,8 @@
     "completionDocumentation": true,
     "completeUnimported": true,
     "deepCompletion": true,
+    "formatting.gofumpt": false,
+    "formatting.local": "false",
     "staticcheck": false
   },
   "go.languageServerFlags": ["-rpc.trace", "serve", "--debug=localhost:6060"],

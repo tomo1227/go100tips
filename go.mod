@@ -5,6 +5,7 @@ go 1.24.4
 require (
 	github.com/cockroachdb/errors v1.12.0
 	github.com/elastic/go-elasticsearch/v9 v9.0.0
+	github.com/go-resty/resty/v2 v2.16.5
 	github.com/pkg/errors v0.9.1
 	github.com/samber/do v1.6.0
 	github.com/stretchr/testify v1.10.0
