@@ -262,5 +262,11 @@
   "errorLens.excludeBySource": ["cSpell"],
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "code-runner.executorMap": {
+    "go": "cd $dir && go run ."
+  },
+  "code-runner.executorMapByGlob": {
+    "$dir/*.go": "go"
   }
 }
