@@ -2,7 +2,7 @@
   "recommendations": [
     // Go
     "golang.go",
-    "premparihar.gotest",
+    "premparihar.gotestexplorer",
     // yaml, jsonc, json, toml
     "redhat.vscode-yaml",
     "esbenp.prettier-vscode",
