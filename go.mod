@@ -12,7 +12,7 @@ require (
 	github.com/samber/do v1.6.0
 	github.com/stretchr/testify v1.10.0
 	go.uber.org/dig v1.19.0
-	go.uber.org/mock v0.5.2
+	go.uber.org/mock v0.6.0
 	gofr.dev v1.43.0
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 )
