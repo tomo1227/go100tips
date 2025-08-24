@@ -1,10 +1,15 @@
 coverage:
   paths:
     - coverage.out
+  exclude:
+  - "**/*_gen.go"
+  - "**/mock/*.go"
 codeToTestRatio:
   code:
     - "**/*.go"
     - "!**/*_test.go"
+    - "!**/*_gen.go"
+    - "!**/mock/*.go"
   test:
     - "**/*_test.go"
 testExecutionTime:

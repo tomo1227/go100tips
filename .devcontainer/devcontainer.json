@@ -2,7 +2,7 @@
   "name": "${localWorkspaceFolderBasename}",
   "service": "devcontainer",
   "workspaceFolder": "/workspace",
-  "dockerComposeFile": ["../compose.yml"],
+  "dockerComposeFile": ["./compose.yml"],
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
