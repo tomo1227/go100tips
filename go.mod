@@ -10,7 +10,7 @@ require (
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/pkg/errors v0.9.1
 	github.com/samber/do v1.6.0
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.0
 	go.uber.org/dig v1.19.0
 	go.uber.org/mock v0.6.0
 	gofr.dev v1.44.0
