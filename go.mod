@@ -1,6 +1,6 @@
 module go100tips
 
-go 1.24.4
+go 1.25
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
@@ -10,10 +10,10 @@ require (
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/pkg/errors v0.9.1
 	github.com/samber/do v1.6.0
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	go.uber.org/dig v1.19.0
 	go.uber.org/mock v0.6.0
-	gofr.dev v1.44.0
+	gofr.dev v1.44.2
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 )
 
@@ -73,7 +73,7 @@ require (
 	github.com/redis/go-redis/v9 v9.12.1 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rogpeppe/go-internal v1.13.1 // indirect
-	github.com/segmentio/kafka-go v0.4.48 // indirect
+	github.com/segmentio/kafka-go v0.4.49 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.2 // indirect
