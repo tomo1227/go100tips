@@ -7,6 +7,7 @@ type customer struct {
 }
 
 func (c customer) add(operation float64) {
+	//nolint:staticcheck
 	c.balance += operation
 }
 
