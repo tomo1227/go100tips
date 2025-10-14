@@ -1,4 +1,4 @@
-include .env
+include .devcontainer/.env
 # test を実行
 .PHONY: test
 test: 
