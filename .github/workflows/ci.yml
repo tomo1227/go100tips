@@ -28,7 +28,7 @@ jobs:
           level: error
           filter_mode: nofilter
           golangci_lint_flags: "--config=.golangci.toml --timeout=5m"
-          fail_on_error: true
+          fail_level: error
       - name: Check vulnerability
         run: make vuln
         shell: bash

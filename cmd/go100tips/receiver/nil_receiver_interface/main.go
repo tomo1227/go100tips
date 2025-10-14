@@ -24,6 +24,7 @@ type Customer struct {
 	Name string
 }
 
+//nolint:staticcheck
 func (c Customer) Validate() error {
 	var m *MultiError
 	if c.Age < 0 {
@@ -41,6 +42,7 @@ func (c Customer) Validate() error {
 
 func main() {
 	customer := Customer{Age: 33, Name: "John"}
+	//nolint:staticcheck
 	if err := customer.Validate(); err != nil {
 		log.Fatalf("customer is invalid: %v", err)
 	}
